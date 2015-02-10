@@ -461,5 +461,33 @@
     1 has a value of bar
     2 has a value of baz
 
+## Extended Each
+    var each = function (data) {
+        for (var i = 0; i < data.arr.length; i++) {
+            var obj = {};
+            obj.options = data.options;
+            obj.index = i;
+            obj.value = data.arr[i];
+            data.func(obj);
+        }
+    }
 
+ **Which is called like so:**
 
+    var myArray = ['foo', 'bar', 'baz'];
+    each({
+        'arr' : myArray,
+        'func': function (data){
+            console.log(data.index + ' has a value of ' + data.value + ' option: ' + data.options.other);
+        },
+        'options': {
+            'other' : 'data'
+        }
+    });
+
+**Output would be** :
+
+    0 has a value of foo option data
+    1 has a value of bar option data
+    2 has a value of baz option data
+ 
