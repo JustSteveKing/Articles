@@ -435,3 +435,28 @@
     	console.log(prop); // name, location
 		console.log(obj); // { name: 'Steve', location: 'UK' }, { name: 'Steve', location: 'UK' }
 	});
+-----
+
+# Each
+    var each = function (arr, func) {
+        for (var i = 0; i < arr.length; i++) {
+            func(i, arr[i]);
+        }
+    };
+
+
+## This is called like so :
+    var myArray = ['foo', 'bar', 'baz'];
+    each(myArray, function (index, value){
+        console.log(index + ' has a value of ' + value);
+    });
+
+
+**Output would be** :
+
+    0 has a value of foo
+    1 has a value of bar
+    2 has a value of baz
+
+
+
