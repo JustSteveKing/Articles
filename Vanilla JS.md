@@ -438,6 +438,9 @@
 -----
 
 # Each
+
+*Created and provided by [JRMD](https://github.com/jrmd-)*
+
     var each = function (arr, func) {
         for (var i = 0; i < arr.length; i++) {
             func(i, arr[i]);
